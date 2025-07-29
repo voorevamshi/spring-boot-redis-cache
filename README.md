@@ -44,10 +44,28 @@ This is a demo Spring Boot project that uses **Redis** for caching REST API resp
 
 ## 📁 Structure
 ```
-src/
- └── main/
-     ├── java/com/vmc/redis/
-     ├── resources/application.yml
+spring-boot-redis-cache/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── vmc/
+│       │           └── redis/
+│       │               ├── RedisCacheApplication.java
+│       │               ├── config/
+│       │               │   └── RedisConfig.java
+│       │               ├── controller/
+│       │               │   └── BookController.java
+│       │               ├── model/
+│       │               │   └── Book.java
+│       │               ├── repository/
+│       │               │   └── BookRepository.java
+│       │               └── service/
+│       │                   └── BookService.java
+│       └── resources/
+│           └── application.yml
+├── pom.xml
+
 ```
 
 ## 🤝 License
