@@ -12,7 +12,7 @@ public class BookService {
     @Autowired
     private BookRepository repository;
 
-    @Cacheable(value = "books", key = "#id")
+    @Cacheable(value = "books", key = "#id" ,unless="#result == null")
     public Book getBookById(String id) {
         System.out.println("Fetching from DB for id: " + id);
         return repository.findById(id).orElse(null);
@@ -20,11 +20,14 @@ public class BookService {
 
     @CachePut(value = "books", key = "#book.id")
     public Book updateBook(Book book) {
+    	 System.out.println("Saved book id: " + book.getId());
         return repository.save(book);
     }
 
     @CacheEvict(value = "books", key = "#id")
-    public void deleteBook(String id) {
+    public String deleteBook(String id) {
+    	System.out.println("Deleted book id: " + id);
         repository.deleteById(id);
+        return "Book deleted successfully";
     }
 }

@@ -11,6 +11,7 @@ This is a demo Spring Boot project that uses **Redis** for caching REST API resp
 ## ⚙️ Requirements
 - Java 17+
 - Maven
+- Download Readis from https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100
 - Redis Server running on `localhost:6379`
 
 ## ▶️ How to Run
